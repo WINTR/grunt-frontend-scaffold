@@ -14,7 +14,7 @@ Project Setup
 - For sourcemap and Compass support, SASS and Compass gems need to be installed with the --pre flag
  - `gem install sass --pre && gem install compass --pre`
 - Clone and cd into the repo
- - `git clone https://github.com/damassi/grunt-frontend-scaffold.git && cd grunt-frontend-scaffold`
+ - `git clone https://github.com/WINTR/grunt-frontend-scaffold.git && cd grunt-frontend-scaffold`
 - Then install Grunt task dependencies
  - `npm install`
 
