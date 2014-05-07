@@ -49,6 +49,23 @@ module.exports = (grunt) ->
 
 
       # --------------------------------------------------------
+      # Automatically prefix vendor-related CSS properties
+      # --------------------------------------------------------
+
+
+      'autoprefixer':
+
+         dev:
+            src:  "<%= sass.dev.files[0].dest %>"
+            dest: "<%= sass.dev.files[0].dest %>"
+
+         dist:
+            src:  "<%= sass.dist.files[0].dest %>"
+            dest: "<%= sass.dist.files[0].dest %>"
+
+
+
+      # --------------------------------------------------------
       # Copy Bower sources to vendor directory for concat
       # --------------------------------------------------------
 
@@ -308,7 +325,7 @@ module.exports = (grunt) ->
 
          styles:
             files: "#{sources}/styles/**/*.{scss,sass}"
-            tasks: ['sass:dev']
+            tasks: ['sass:dev', 'autoprefixer:dev']
 
          test:
            files: [ 'test/**/*.*' ]
@@ -348,6 +365,7 @@ module.exports = (grunt) ->
       'copy:html'
       'browserify:dev'
       'sass:dev'
+      'autoprefixer:dev'
       'bower:vendor'
       'concat:vendor'
       'test'
@@ -363,6 +381,7 @@ module.exports = (grunt) ->
       'copy:html'
       'browserify:dist'
       'sass:dist'
+      'autoprefixer:dist'
       'bower:vendor'
       'concat:vendor'
       'uglify'
