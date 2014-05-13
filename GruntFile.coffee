@@ -86,7 +86,7 @@ module.exports = (grunt) ->
       'browserify':
 
          dev:
-            src: ["#{sources}/scripts/initialize.coffee"]
+            src: ["#{sources}/scripts/app.coffee"]
             dest: "#{output}/assets/scripts/app.js"
 
             options:
@@ -108,21 +108,6 @@ module.exports = (grunt) ->
             options:
                transform: [handleify, coffeeify, uglifyify]
                debug: false
-
-
-
-
-      # --------------------------------------------------------
-      # Lint CoffeeScript files within sources and test
-      # --------------------------------------------------------
-
-
-      'coffeelint':
-
-         test: [
-            "#{sources}/**/*.coffee"
-            "#{test}/**/*.coffee"
-         ]
 
 
 
@@ -278,7 +263,6 @@ module.exports = (grunt) ->
          dev:
             options:
                style: "expanded"
-               compass: true
                sourcemap: true
 
             files: [{
@@ -289,7 +273,6 @@ module.exports = (grunt) ->
          dist:
             options:
                style: "compressed"
-               compass: true
                sourcemap: false
 
             files: [{
