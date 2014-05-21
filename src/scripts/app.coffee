@@ -14,5 +14,4 @@ class App
 
 
 # Kick off the app
-$ ->
-   new App
+$ -> new App
